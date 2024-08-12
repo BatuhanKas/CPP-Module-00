@@ -6,15 +6,21 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 13:36:40 by bkas              #+#    #+#             */
-/*   Updated: 2024/05/10 12:03:58 by bkas             ###   ########.fr       */
+/*   Updated: 2024/08/12 20:19:07 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* **************************** [v] INCLUDES [v] **************************** */
 
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
 #include <iomanip>
 #include <iostream>
+
+/* **************************** [^] INCLUDES [^] **************************** */
+
+/* **************************** [v] DEFINES [v] **************************** */
 
 #define BLACK "\033[0;30m"
 #define RED "\033[0;31m"
@@ -34,25 +40,15 @@
 #define LIGHT_CYAN "\033[1;36m"
 #define LIGHT_WHITE "\033[1;37m"
 
-#ifndef string
 #define string std::string
-#endif
-
-#ifndef cout
 #define cout std::cout
-#endif
-
-#ifndef cin
 #define cin std::cin
-#endif
-
-#ifndef endl
 #define endl std::endl
-#endif
-
-#ifndef setw
 #define setw std::setw
-#endif
+
+/* **************************** [^] DEFINES [^] **************************** */
+
+/* ************************* [v] CONTACT CLASS [v] ************************* */
 
 class Contact {
    private:
@@ -74,5 +70,7 @@ class Contact {
     string getPhoneNumber();
     string getDarkestSecret();
 };
+
+/* ************************* [^] CONTACT CLASS [^] ************************* */
 
 #endif

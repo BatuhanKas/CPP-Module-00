@@ -6,11 +6,17 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 13:21:04 by bkas              #+#    #+#             */
-/*   Updated: 2024/05/10 11:37:22 by bkas             ###   ########.fr       */
+/*   Updated: 2024/08/12 20:19:01 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* **************************** [v] INCLUDES [v] **************************** */
+
 #include "../inc/PhoneBook.hpp"
+
+/* **************************** [^] INCLUDES [^] **************************** */
+
+/* ************************** [v] CONTROL NAME [v] ************************** */
 
 static bool controlName(string str) {
     if (str.empty()) {
@@ -26,6 +32,10 @@ static bool controlName(string str) {
     }
     return false;
 }
+
+/* ************************** [^] CONTROL NAME [^] ************************** */
+
+/* ************************ [v] CONTROL NUMBER [v] ************************ */
 
 static bool controlNumber(string str) {
     if (str.empty()) {
@@ -45,6 +55,10 @@ static bool controlNumber(string str) {
     return false;
 }
 
+/* ************************ [^] CONTROL NUMBER [^] ************************ */
+
+/* ********************* [v] CONTROL SEARCH INDEX [v] ********************* */
+
 static bool controlSearchIndex(string str) {
     if (str.empty()) {
         cout << RED << "Empty Line !" << RESET << endl;
@@ -59,6 +73,10 @@ static bool controlSearchIndex(string str) {
     return false;
 }
 
+/* ********************* [^] CONTROL SEARCH INDEX [^] ********************* */
+
+/* *********************** [v] CONTROL NICKNAME [v] *********************** */
+
 static bool controlNickname(string str) {
     if (str.empty()) {
         cout << RED << "Empty Line !" << RESET << endl;
@@ -66,6 +84,10 @@ static bool controlNickname(string str) {
     }
     return false;
 }
+
+/* *********************** [^] CONTROL NICKNAME [^] *********************** */
+
+/* ************************** [v] ADD CONTACT [v] ************************** */
 
 void PhoneBook::addContact() {
     string input;
@@ -107,6 +129,10 @@ void PhoneBook::addContact() {
     i++;
 }
 
+/* ************************** [^] ADD CONTACT [^] ************************** */
+
+/* ********************* [v] PRINT CONTACT MEMBERS [v] ********************* */
+
 void PhoneBook::printContactMembers(int i) {
     if (i == 0) {
         cout << "  INDEX" << "       NAME" << "     LASTNAME" << "   NICKNAME"
@@ -132,6 +158,10 @@ void PhoneBook::printContactMembers(int i) {
     cout << "----------*----------*----------*----------*" << endl;
 }
 
+/* ********************* [^] PRINT CONTACT MEMBERS [^] ********************* */
+
+/* ******************** [v] PRINT USER INFORMATION [v] ******************** */
+
 void PhoneBook::printUserInformation(int i) {
     cout << LIGHT_MAGENTA << "First Name: " << RESET << book[i].getFirstName()
          << endl;
@@ -144,6 +174,10 @@ void PhoneBook::printUserInformation(int i) {
     cout << LIGHT_GREEN << "Darkest Secret: " << RESET
          << book[i].getDarkestSecret() << endl;
 }
+
+/* ******************** [^] PRINT USER INFORMATION [^] ******************** */
+
+/* ************************ [v] SEARCH CONTACT [v] ************************ */
 
 void PhoneBook::searchContact() {
     int i = 0;
@@ -166,3 +200,5 @@ void PhoneBook::searchContact() {
         cout << RED << "Error! Wrong Index!" << RESET << endl;
     }
 }
+
+/* ************************ [^] SEARCH CONTACT [^] ************************ */
