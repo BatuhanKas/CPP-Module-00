@@ -6,7 +6,7 @@
 /*   By: bkas <bkas@student.42kocaeli.com.tr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 15:12:35 by bkas              #+#    #+#             */
-/*   Updated: 2024/08/12 20:19:03 by bkas             ###   ########.fr       */
+/*   Updated: 2024/09/02 05:35:14 by bkas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,18 @@ int main() {
     while (42) {
         cout << BLUE << "Please enter a value (ADD, SEARCH, EXIT)" << RESET
              << endl;
-        getline(cin, input);
-        if (input == "EXIT") {
+        if (getline(cin, input)) {
+            if (input == "EXIT") {
+                break;
+            } else if (input == "ADD") {
+                inpObj.addContact();
+            } else if (input == "SEARCH") {
+                inpObj.searchContact();
+            } else {
+                cout << RED << "Wrong Input!" << RESET << endl;
+            }
+        } else if (cin.eof()) {
             break;
-        } else if (input == "ADD") {
-            inpObj.addContact();
-        } else if (input == "SEARCH") {
-            inpObj.searchContact();
-        } else {
-            cout << RED << "Wrong Input!" << RESET << endl;
         }
     }
 }
